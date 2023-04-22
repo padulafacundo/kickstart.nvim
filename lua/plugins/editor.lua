@@ -1,11 +1,14 @@
 -- Editor plugins
 
 return {
-    -- Fuzzy Finder (files, lsp, etc)
+  -- Fuzzy Finder (files, lsp, etc)
   {
     'nvim-telescope/telescope.nvim',
     version = '*',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function ()
+      require('config.telescope').setup()
+    end,
   },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
