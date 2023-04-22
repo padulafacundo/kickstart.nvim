@@ -127,9 +127,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- [[Configure Fugitive ]]
-vim.cmd('command! Gblame Git blame') -- alias for Git blame
-
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
