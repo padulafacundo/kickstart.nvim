@@ -25,7 +25,12 @@ return {
   },
 
   -- Highlight TODO comments, FIXME comments, etc
-  { 'folke/todo-comments.nvim' },
+  {
+    'folke/todo-comments.nvim',
+    config = function()
+      require('todo-comments').setup()
+    end
+  },
 
   -- Add indentation guides even on blank lines
   {
