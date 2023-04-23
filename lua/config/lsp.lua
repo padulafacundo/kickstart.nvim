@@ -58,6 +58,7 @@ function M.setup()
     -- rust_analyzer = {},
     -- tsserver = {},
 
+    solargraph = {},
     lua_ls = {
       Lua = {
         workspace = { checkThirdParty = false },
