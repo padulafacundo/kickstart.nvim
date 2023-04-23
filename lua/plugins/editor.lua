@@ -43,4 +43,7 @@ return {
       show_current_context = true,
     },
   },
+
+  -- Auto-inserts end-blocks
+  { 'tpope/vim-endwise' },
 }
