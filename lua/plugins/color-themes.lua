@@ -3,7 +3,7 @@ return {
     'navarasu/onedark.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      require('config.onedark').setup()
     end,
   },
 }
