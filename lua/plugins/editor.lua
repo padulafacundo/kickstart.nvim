@@ -46,4 +46,6 @@ return {
 
   -- Auto-inserts end-blocks
   { 'tpope/vim-endwise' },
+
+  { 'tpope/vim-unimpaired' }
 }
