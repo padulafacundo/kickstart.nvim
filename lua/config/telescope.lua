@@ -25,9 +25,9 @@ function M.setup()
   local builtin = require('telescope.builtin')
   -- find
   nmap('<leader>fb', builtin.buffers, { desc = '[F]ind existing [B]uffers' })
-  nmap('<leader><space>', builtin.buffers, { desc = '[F]ind existing [B]uffers' }) -- same as above
   nmap('<C-b>', builtin.buffers, { desc = '[F]ind existing [B]uffers' }) -- same as above
   nmap('<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+  nmap('<leader><space>', builtin.find_files, { desc = 'Find Buffers' }) -- same as above
   nmap('<C-p>', builtin.find_files, { desc = '[F]ind [F]iles' }) -- same as above
   nmap('<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
   nmap('<leader>gs', builtin.grep_string, { desc = '[G]rep [S]tring' }) -- same as above
