@@ -8,7 +8,8 @@ function M.setup()
     }
   }
 
-  -- Enable telescope fzf native, if installed
+  -- Enable telescope fzf native, if installed. This overrides
+  -- telescope files_sorter and generic_sorter by default
   pcall(require('telescope').load_extension, 'fzf')
 
   -- See `:help telescope.builtin`
