@@ -5,11 +5,6 @@ function M.setup()
 
   require('telescope').setup {
     defaults = {
-      mappings = {
-        i = {
-          ['<esc>'] = actions.close,
-        },
-      },
       file_ignore_patterns = { 'node_modules' },
     }
   }
@@ -32,6 +27,7 @@ function M.setup()
   nmap('<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
   nmap('<leader>fo', builtin.grep_string, { desc = '[F]ind [O]ccurrences' }) -- same as above
   nmap('<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+  nmap('<leader>fw', builtin.live_grep, { desc = '[F]ind [W]ord' })
   nmap('<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 
   -- git
