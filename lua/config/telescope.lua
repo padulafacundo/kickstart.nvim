@@ -30,7 +30,7 @@ function M.setup()
   nmap('<leader><space>', builtin.find_files, { desc = 'Find Buffers' }) -- same as above
   nmap('<C-p>', builtin.find_files, { desc = '[F]ind [F]iles' }) -- same as above
   nmap('<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-  nmap('<leader>gs', builtin.grep_string, { desc = '[G]rep [S]tring' }) -- same as above
+  nmap('<leader>fo', builtin.grep_string, { desc = '[F]ind [O]ccurrences' }) -- same as above
   nmap('<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
   nmap('<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 
