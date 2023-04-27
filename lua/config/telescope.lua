@@ -29,6 +29,7 @@ function M.setup()
   nmap('<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
   nmap('<leader>fw', builtin.live_grep, { desc = '[F]ind [W]ord' })
   nmap('<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+  nmap('<leader>ts', builtin.resume, { desc = '[T]elescope [R]esume' })
 
   -- git
   nmap('<leader>gc', builtin.git_commits, { desc = '[G]it [C]ommits' })
