@@ -36,7 +36,7 @@ function M.setup()
 
   -- git
   nmap('<leader>gc', builtin.git_commits, { desc = '[G]it [C]ommits' })
-  nmap('<leader>gs', builtin.git_commits, { desc = '[G]it [S]tatus' })
+  nmap('<leader>gs', builtin.git_status, { desc = '[G]it [S]tatus' })
 
   nmap('<leader>/', function()
     -- You can pass additional configuration to telescope to change theme, layout, etc.
