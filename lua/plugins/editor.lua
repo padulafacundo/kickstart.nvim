@@ -3,10 +3,11 @@
 return {
   -- Fuzzy Finder (files, lsp, etc)
   -- ripgrep needs 'brew install ripgrep'
+  -- fd needs 'brew install fd'
   {
     'nvim-telescope/telescope.nvim',
     version = '*',
-    dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' },
+    dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'sharkdp/fd' },
     config = function ()
       require('config.telescope').setup()
     end,

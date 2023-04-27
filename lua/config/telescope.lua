@@ -4,6 +4,7 @@ function M.setup()
   require('telescope').setup {
     defaults = {
       file_ignore_patterns = { 'node_modules' },
+      find_command = {'fd', '--hidden', '--type', 'f'},
     }
   }
 
