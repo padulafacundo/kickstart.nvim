@@ -47,7 +47,16 @@ return {
   },
 
   -- Auto-inserts end-blocks
-  { 'tpope/vim-endwise' },
+  {
+    'RRethy/nvim-treesitter-endwise',
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        endwise = {
+          enable = true,
+        },
+      }
+    end
+  },
 
   { 'tpope/vim-unimpaired' },
 
