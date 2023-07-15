@@ -1,4 +1,4 @@
- -- Highlight, edit, and navigate code
+-- Highlight, edit, and navigate code
 return {
   {
     'nvim-treesitter/nvim-treesitter',
@@ -10,4 +10,8 @@ return {
       require('config.treesitter').setup()
     end,
   },
+  {
+    -- Highlight for .slim files
+    'slim-template/vim-slim',
+  }
 }
