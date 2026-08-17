@@ -43,16 +43,10 @@ return {
     },
   },
 
-  -- Auto-inserts end-blocks
+  -- Auto-inserts end-blocks (self-initializes on Neovim 0.9+)
   {
     'RRethy/nvim-treesitter-endwise',
-    config = function()
-      require('nvim-treesitter.configs').setup {
-        endwise = {
-          enable = true,
-        },
-      }
-    end
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
 
   { 'tpope/vim-unimpaired' },
