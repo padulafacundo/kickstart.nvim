@@ -40,6 +40,15 @@ function M.setup()
     end, { desc = 'Format current buffer with LSP' })
   end
 
+  vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(args)
+      local client = vim.lsp.get_client_by_id(args.data.client_id)
+      if client then
+        on_attach(client, args.buf)
+      end
+    end,
+  })
+
   -- Enable the following language servers
   --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
   --
@@ -54,34 +63,26 @@ function M.setup()
 
     solargraph = {},
     lua_ls = {
-      Lua = {
-        workspace = { checkThirdParty = false },
-        telemetry = { enable = false },
+      settings = {
+        Lua = {
+          workspace = { checkThirdParty = false },
+          telemetry = { enable = false },
+        },
       },
     },
   }
 
-  require('neodev').setup() -- Setup neovim lua configuration
-
   -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+  for name, config in pairs(servers) do
+    config.capabilities = capabilities
+    vim.lsp.config(name, config)
+  end
 
   -- Ensure the servers above are installed
-  local mason_lspconfig = require 'mason-lspconfig'
-
-  mason_lspconfig.setup {
+  require('mason-lspconfig').setup {
     ensure_installed = vim.tbl_keys(servers),
-  }
-
-  mason_lspconfig.setup_handlers {
-    function(server_name)
-      require('lspconfig')[server_name].setup {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = servers[server_name],
-      }
-    end,
   }
 end
 
