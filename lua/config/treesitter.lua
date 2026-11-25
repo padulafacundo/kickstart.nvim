@@ -3,7 +3,7 @@ local M = {}
 function M.setup()
   -- See `:help nvim-treesitter`
   -- Add languages to be installed here that you want installed for treesitter
-  local parsers = { 'lua', 'vim', 'vimdoc', 'ruby', 'javascript', 'typescript', 'tsx', 'python', 'go' }
+  local parsers = { 'lua', 'vim', 'vimdoc', 'ruby', 'javascript', 'typescript', 'tsx', 'python', 'go', 'kotlin' }
   local installed = require('nvim-treesitter.config').get_installed()
   local installed_set = {}
   for _, p in ipairs(installed) do
